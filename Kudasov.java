@@ -48,7 +48,7 @@ public class OrderedPSet<E> extends AbstractUnmodifiableSet<E> implements PSet<E
   private final PSortedMap<Long, E> elements;
 
   private OrderedPSet(final PMap<E, Long> ids, final PSortedMap<Long, E> elements) {
-    this.ids = requireNonNull(ids, "ids is null");
+    this.ids = requireNonNull(ids, "numers is null");
     this.elements = requireNonNull(elements, "elements is null");
   }
 
