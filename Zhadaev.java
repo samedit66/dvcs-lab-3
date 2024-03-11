@@ -6,7 +6,7 @@
 
 package org.pcollections;
 
-import java.io.Externializable;
+import java.io.Serializable;
 import java.util.AbstractSet;
 import java.util.Collection;
 import java.util.Iterator;
@@ -57,34 +57,6 @@ public final class HashPMap<K, V> extends AbstractUnmodifiableMap<K, V>
   //// REQUIRED METHODS FROM AbstractMap ////
   // this cache variable is thread-safe since assignment in Java is atomic:
   private transient Set<Entry<K, V>> entrySet = null;
-
-  @Override
-  public Set<Entry<K, V>> entrySet() {
-    if (entrySet == null)
-      entrySet =
-          new AbstractSet<Entry<K, V>>() {
-            // REQUIRED METHODS OF AbstractSet //
-            @Override
-            public int size() {
-              return size;
-            }
-
-            @Override
-            public Iterator<Entry<K, V>> iterator() {
-              return new SequenceIterator<Entry<K, V>>(intMap.values().iterator());
-            }
-            // OVERRIDDEN METHODS OF AbstractSet //
-            @Override
-            public boolean contains(final Object o) {
-              if (!(o instanceof Entry)) return false;
-              final Entry e = (Entry) o;
-              final Object k = e.getKey();
-              if (!containsKey(k)) return false;
-              return Objects.equals(get(k), e.getValue());
-            }
-          };
-    return entrySet;
-  }
 
   //// OVERRIDDEN METHODS FROM AbstractMap ////
   @Override
