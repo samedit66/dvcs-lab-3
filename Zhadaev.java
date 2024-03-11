@@ -6,7 +6,7 @@
 
 package org.pcollections;
 
-import java.io.Serializable;
+import java.io.Externializable;
 import java.util.AbstractSet;
 import java.util.Collection;
 import java.util.Iterator;
