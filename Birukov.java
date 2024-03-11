@@ -1,6 +1,6 @@
-package io.fair_acc.math;
+//package io.fair_acc.math;
 
-import static io.fair_acc.dataset.DataSet.DIM_X;
+//import static io.fair_acc.dataset.DataSet.DIM_X;
 import static io.fair_acc.dataset.DataSet.DIM_Y;
 import static io.fair_acc.dataset.DataSet.DIM_Z;
 
@@ -15,7 +15,7 @@ import io.fair_acc.dataset.DefaultNumberFormatter;
 import io.fair_acc.dataset.Formatter;
 import io.fair_acc.dataset.GridDataSet;
 import io.fair_acc.dataset.spi.DoubleErrorDataSet;
-import io.fair_acc.dataset.utils.DoubleArrayCache;
+//import io.fair_acc.dataset.utils.DoubleArrayCache;
 
 /**
  * Some math operation on multi-dimensional DataSets (nDim larger than 2)

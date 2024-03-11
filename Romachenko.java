@@ -27,7 +27,7 @@ import java.util.NoSuchElementException;
 import javax.annotation.Nullable;
 
 import static java.lang.Math.min;
-
+//first commit in main
 /**
  * A reliable, efficient, file-based, FIFO queue. Additions and removals are O(1). All operations
  * are atomic. Writes are synchronous; data will be written to disk before an operation returns.
@@ -52,6 +52,7 @@ import static java.lang.Math.min;
  *
  * @author Bob Lee (bob@squareup.com)
  */
+//second commit in Romachenko
 public final class QueueFile implements Closeable, Iterable<byte[]> {
   /** Leading bit set to 1 indicating a versioned header and the version of 1. */
   private static final int VERSIONED_HEADER = 0x80000001;
