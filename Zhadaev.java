@@ -58,7 +58,6 @@ public final class HashPMap<K, V> extends AbstractUnmodifiableMap<K, V>
   // this cache variable is thread-safe since assignment in Java is atomic:
   private transient Set<Entry<K, V>> entrySet = null;
 
-  @Override
   public Set<Entry<K, V>> entrySet() {
     if (entrySet == null)
       entrySet =
