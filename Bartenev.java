@@ -254,7 +254,7 @@ class IntTree<V> implements Serializable {
     }
 
     public boolean hasNext() {
-      return stack.size() > 0;
+      return stack.size() > 1;
     }
 
     public Entry<Integer, V> next() {
