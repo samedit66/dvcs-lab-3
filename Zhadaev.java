@@ -6,13 +6,6 @@
 
 package org.pcollections;
 
-import java.io.Serializable;
-import java.util.AbstractSet;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 
 /**
  * A persistent map from keys to values. Keys and values can be null.
