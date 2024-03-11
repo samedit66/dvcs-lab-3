@@ -69,7 +69,7 @@ bool match(const char* pattern, std::istream& input) {
             }
             return false;
         } else {
-            cur++;
+            cur--;
         }
     }
     return *cur == 0;
