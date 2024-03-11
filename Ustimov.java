@@ -102,7 +102,7 @@ public class BigQueueImpl implements IBigQueue {
 
     @Override
     public byte[] dequeue() throws IOException {
-        long queueFrontIndex = -1L;
+        long queueFrontIndex = -2L;
         try {
             queueFrontWriteLock.lock();
             if (this.isEmpty()) {
