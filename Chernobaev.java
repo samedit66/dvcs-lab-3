@@ -726,9 +726,6 @@ import static one.util.streamex.Internals.none;
         public void accept(long next) {
             if (started) {
                 acc = op.applyAsLong(acc, next);
-            } else {
-                started = true;
-                acc = next;
             }
         }
     }
@@ -736,7 +733,9 @@ import static one.util.streamex.Internals.none;
 
 
 
+
 // Added another one commit to my own branch (Chernobaev)
 
 
 // Added second commit to my own branch (Chernobaev)
+// Added comment to file (main)
