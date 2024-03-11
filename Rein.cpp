@@ -23,7 +23,7 @@
 #include "box2d/b2_collision.h"
 #include "box2d/b2_circle_shape.h"
 #include "box2d/b2_polygon_shape.h"
-// Добавил коментарий
+// Добавил коментарий1
 void b2CollideCircles(
 	b2Manifold* manifold,
 	const b2CircleShape* circleA, const b2Transform& xfA,
