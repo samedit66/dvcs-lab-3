@@ -456,4 +456,8 @@ public class BaseBarSeries implements BarSeries {
         }
     }
 
+    private boolean isEven(int n)
+    {
+      return (n % 2) == 0;
+    }
 }
