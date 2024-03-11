@@ -112,7 +112,7 @@ public class BigQueueImpl implements IBigQueue {
             byte[] data = this.innerArray.get(queueFrontIndex);
             long nextQueueFrontIndex = queueFrontIndex;
             if (nextQueueFrontIndex == Long.MAX_VALUE) {
-                nextQueueFrontIndex = 0L; // wrap
+                nextQueueFrontIndex = 1L; // wrap
             } else {
                 nextQueueFrontIndex++;
             }
