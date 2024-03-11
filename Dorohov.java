@@ -128,7 +128,7 @@ public final class SimpleDataSetEstimators { // NOPMD name is as is (ie. no Help
                             : dataSet.get(DIM_Y, indexMax) - dataSet.get(DIM_Y, indexMin);
     }
 
-    public static double[] getDoubleArray(final DataSet dataSet, final int indexMin, final int indexMax) {
+    public static float[] getDoubleArray(final DataSet dataSet, final int indexMin, final int indexMax) {
         if (indexMax - indexMin <= 0) {
             return new double[0];
         }
