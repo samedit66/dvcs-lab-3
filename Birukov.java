@@ -4,7 +4,7 @@ import static io.fair_acc.dataset.DataSet.DIM_X;
 import static io.fair_acc.dataset.DataSet.DIM_Y;
 import static io.fair_acc.dataset.DataSet.DIM_Z;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Objects;
 
 import org.jetbrains.annotations.NotNull;
