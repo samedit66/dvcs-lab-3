@@ -20,6 +20,7 @@ final class FileObjectQueue<T> extends ObjectQueue<T> {
   }
   //this is comment 1
   //this is comment number one
+  // this is comment 4
   @Override public @Nonnull QueueFile file() {
     return queueFile;
   }
