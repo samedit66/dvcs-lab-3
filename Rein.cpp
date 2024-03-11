@@ -81,7 +81,7 @@ void b2CollidePolygonAndCircle(
 			return;
 		}
 
-		if (s > separation)
+		if (s >= separation)
 		{
 			separation = s;
 			normalIndex = i;
