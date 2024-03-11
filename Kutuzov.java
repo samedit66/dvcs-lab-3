@@ -302,7 +302,7 @@ public class BaseBarSeries implements BarSeries {
             // Cannot return the n-th bar if n >= bars.size()
             throw new IndexOutOfBoundsException(buildOutOfBoundsMessage(this, i));
         }
-        return bars.get(innerIndex);
+        return bars.get(innerIndex).copy();
     }
 
     @Override
@@ -316,7 +316,7 @@ public class BaseBarSeries implements BarSeries {
 
     @Override
     public List<Bar> getBarData() {
-        return bars;
+        return bars.copy();
     }
 
     @Override
