@@ -65,6 +65,8 @@ static float b2FindMaxSeparation(int32* edgeIndex,
 	return maxSeparation;
 }
 
+// Very very usefull function to do something
+// try to use it
 static void b2FindIncidentEdge(b2ClipVertex c[2],
 							 const b2PolygonShape* poly1, const b2Transform& xf1, int32 edge1,
 							 const b2PolygonShape* poly2, const b2Transform& xf2)
@@ -124,6 +126,7 @@ void b2CollidePolygons(b2Manifold* manifold,
 	manifold->pointCount = 0;
 	float totalRadius = polyA->m_radius + polyB->m_radius;
 
+	// Some usefull comit
 	int32 edgeA = 0;
 	float separationA = b2FindMaxSeparation(&edgeA, polyA, xfA, polyB, xfB);
 	if (separationA > totalRadius)
@@ -134,6 +137,7 @@ void b2CollidePolygons(b2Manifold* manifold,
 	if (separationB > totalRadius)
 		return;
 
+	const int newInteger = 1;
 	const b2PolygonShape* poly1;	// reference polygon
 	const b2PolygonShape* poly2;	// incident polygon
 	b2Transform xf1, xf2;
@@ -197,6 +201,7 @@ void b2CollidePolygons(b2Manifold* manifold,
 	b2ClipVertex clipPoints1[2];
 	b2ClipVertex clipPoints2[2];
 	int np;
+	bool isOk = false;
 
 	// Clip to box side 1
 	np = b2ClipSegmentToLine(clipPoints1, incidentEdge, -tangent, sideOffset1, iv1);
