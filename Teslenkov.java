@@ -129,12 +129,12 @@ public class BetaMinHashCombiner implements SketchCombiner<BetaMinHash> {
           b1 = j / den;
           b2 = (j + 1) / den;
         }
-
+//initialization
         double product = 1;
         for (double cardinality : cardinalities) {
           product *= Math.pow(1 - b2, cardinality) - Math.pow(1 - b1, cardinality);
         }
-
+//update
         x += product;
       }
     }
