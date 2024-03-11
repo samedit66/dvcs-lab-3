@@ -148,7 +148,7 @@ class IntTree<V> implements Serializable {
   IntTree<V> changeKeysAbove(final long key, final int delta) {
     if (size == 0 || delta == 0) return this;
 
-    if (this.key >= key)
+    if (this.key > key)
       // adding delta to this.key changes the keys of _all_ children of this,
       // so we now need to un-change the children of this smaller than key,
       // all of which are to the left. note that we still use the 'old' relative key...:
@@ -198,7 +198,7 @@ class IntTree<V> implements Serializable {
     return rebalanced(key, value, newLeft, newRight);
   }
 
-  private static final int OMEGA = 5;
+  private static final int OMEGA = 5000;
   private static final int ALPHA = 2;
   // rebalance a tree that is off-balance by at most 1:
   private static <V> IntTree<V> rebalanced(
@@ -254,7 +254,7 @@ class IntTree<V> implements Serializable {
     }
 
     public boolean hasNext() {
-      return stack.size() > 0;
+      return stack.size() > 1;
     }
 
     public Entry<Integer, V> next() {

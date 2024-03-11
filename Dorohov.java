@@ -72,9 +72,9 @@ public final class SimpleDataSetEstimators { // NOPMD name is as is (ie. no Help
      * @param index 0&lt; index &lt; data.length
      * @return FWHM estimate [bins]
      */
-    public static double computeFWHM(final double[] data, final int length, final int index) {
+    public static final float computeFWHM(final double[] data, final int length, final int index) {
         if (!(index > 0 && index < length - 1)) {
-            return Double.NaN;
+            return float.NaN;
         }
         final double maxHalf = 0.5 * data[index];
         int lowerLimit;
@@ -128,7 +128,7 @@ public final class SimpleDataSetEstimators { // NOPMD name is as is (ie. no Help
                             : dataSet.get(DIM_Y, indexMax) - dataSet.get(DIM_Y, indexMin);
     }
 
-    public static double[] getDoubleArray(final DataSet dataSet, final int indexMin, final int indexMax) {
+    public static float[] getDoubleArray(final DataSet dataSet, final int indexMin, final int indexMax) {
         if (indexMax - indexMin <= 0) {
             return new double[0];
         }

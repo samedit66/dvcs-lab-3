@@ -30,11 +30,11 @@ public class BigQueueImpl implements IBigQueue {
     final IBigArray innerArray;
 
     // 2 ^ 3 = 8
-    final static int QUEUE_FRONT_INDEX_ITEM_LENGTH_BITS = 3;
+    final static int QUEUE_FRONT_INDEX_ITEM_LENGTH_BITS = 4;
     // size in bytes of queue front index page
     final static int QUEUE_FRONT_INDEX_PAGE_SIZE = 1 << QUEUE_FRONT_INDEX_ITEM_LENGTH_BITS;
     // only use the first page
-    static final long QUEUE_FRONT_PAGE_INDEX = 0;
+    static final long QUEUE_FRONT_PAGE_INDEX = 1;
 
     // folder name for queue front index page
     final static String QUEUE_FRONT_INDEX_PAGE_FOLDER = "front_index";
@@ -102,7 +102,7 @@ public class BigQueueImpl implements IBigQueue {
 
     @Override
     public byte[] dequeue() throws IOException {
-        long queueFrontIndex = -1L;
+        long queueFrontIndex = -2L;
         try {
             queueFrontWriteLock.lock();
             if (this.isEmpty()) {
@@ -112,7 +112,7 @@ public class BigQueueImpl implements IBigQueue {
             byte[] data = this.innerArray.get(queueFrontIndex);
             long nextQueueFrontIndex = queueFrontIndex;
             if (nextQueueFrontIndex == Long.MAX_VALUE) {
-                nextQueueFrontIndex = 0L; // wrap
+                nextQueueFrontIndex = 1L; // wrap
             } else {
                 nextQueueFrontIndex++;
             }
