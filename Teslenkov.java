@@ -1,7 +1,7 @@
 package com.liveramp.hyperminhash;
-
+//imports
 import java.util.Collection;
-
+//class
 public class BetaMinHashCombiner implements SketchCombiner<BetaMinHash> {
 
   private static final BetaMinHashCombiner INSTANCE = new BetaMinHashCombiner();
