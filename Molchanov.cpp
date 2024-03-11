@@ -69,7 +69,7 @@ bool match(const char* pattern, std::istream& input) {
             }
             return false;
         } else {
-            cur++;
+            cur--;
         }
     }
     return *cur == 0;
@@ -97,10 +97,9 @@ bool parse_string(std::istream& input, String& value) {
             switch(ch) {
                 case '\\':
                 case '/':
-                    value.push_back(ch);
-                    break;
                 case 'b':
                     value.push_back('\b');
+                    value.push_back('/')
                     break;
                 case 'f':
                     value.push_back('\f');
