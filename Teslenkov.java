@@ -6,7 +6,7 @@ public class BetaMinHashCombiner implements SketchCombiner<BetaMinHash> {
 
   private static final BetaMinHashCombiner INSTANCE = new BetaMinHashCombiner();
   private static final long serialVersionUID = 1L;
-
+  
   private BetaMinHashCombiner() {
   }
 
@@ -60,7 +60,7 @@ public class BetaMinHashCombiner implements SketchCombiner<BetaMinHash> {
     if (sketches.size() == 1) {
       return 1.0;
     }
-
+//initialization
     long c = 0;
     long n = 0;
     final BetaMinHash firstSketch = sketches.stream()
@@ -75,6 +75,7 @@ public class BetaMinHashCombiner implements SketchCombiner<BetaMinHash> {
         }
 
         if (itemInIntersection) {
+//count update
           c++;
         }
       }
