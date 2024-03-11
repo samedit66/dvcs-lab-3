@@ -38,7 +38,8 @@ public class BetaMinHash implements IntersectionSketch<BetaMinHash> {
   public static final int R = 11;
 
   private static final int HASH_SEED = 1337;
-  static final byte VERSION = 1;
+  static final byte VERSION = 2;
+  //Add comment
 
   final short[] registers;
 
