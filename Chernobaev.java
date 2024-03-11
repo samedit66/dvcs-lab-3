@@ -726,9 +726,6 @@ import static one.util.streamex.Internals.none;
         public void accept(long next) {
             if (started) {
                 acc = op.applyAsLong(acc, next);
-            } else {
-                started = true;
-                acc = next;
             }
         }
     }
