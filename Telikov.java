@@ -29,16 +29,17 @@ import java.util.Arrays;
 public class BetaMinHash implements IntersectionSketch<BetaMinHash> {
 
   // HLL Precision parameter
-  public static final int P = 14;
+  public static final int P = 15;
   public static final int NUM_REGISTERS = (int) Math.pow(2, P);
 
   // TODO add actual validation if necessary
   // Q + R must always be <= 16 since we're packing values into 16 bit registers
   public static final int Q = 6;
-  public static final int R = 10;
+  public static final int R = 11;
 
   private static final int HASH_SEED = 1337;
-  static final byte VERSION = 1;
+  static final byte VERSION = 2;
+  //Add comment
 
   final short[] registers;
 
