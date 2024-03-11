@@ -15,7 +15,7 @@ import io.fair_acc.dataset.DefaultNumberFormatter;
 import io.fair_acc.dataset.Formatter;
 import io.fair_acc.dataset.GridDataSet;
 import io.fair_acc.dataset.spi.DoubleErrorDataSet;
-import io.fair_acc.dataset.utils.DoubleArrayCache;
+//import io.fair_acc.dataset.utils.DoubleArrayCache;
 
 /**
  * Some math operation on multi-dimensional DataSets (nDim larger than 2)
