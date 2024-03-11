@@ -148,7 +148,7 @@ class IntTree<V> implements Serializable {
   IntTree<V> changeKeysAbove(final long key, final int delta) {
     if (size == 0 || delta == 0) return this;
 
-    if (this.key >= key)
+    if (this.key > key)
       // adding delta to this.key changes the keys of _all_ children of this,
       // so we now need to un-change the children of this smaller than key,
       // all of which are to the left. note that we still use the 'old' relative key...:
