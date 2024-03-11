@@ -25,7 +25,7 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import javax.annotation.Nullable;
-//first commit in Romachenko
+
 import static java.lang.Math.min;
 
 /**
@@ -52,6 +52,7 @@ import static java.lang.Math.min;
  *
  * @author Bob Lee (bob@squareup.com)
  */
+//second commit in Romachenko
 public final class QueueFile implements Closeable, Iterable<byte[]> {
   /** Leading bit set to 1 indicating a versioned header and the version of 1. */
   private static final int VERSIONED_HEADER = 0x80000001;
