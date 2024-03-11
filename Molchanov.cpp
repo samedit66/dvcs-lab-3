@@ -38,7 +38,7 @@ void jsonxx::assertion( const char *file, int line, const char *expression, bool
 
 namespace jsonxx {
 
-//static_assert( sizeof(unsigned long long) < sizeof(long double), "'long double' cannot hold 64bit values in this compiler :(");
+static_assert( sizeof(unsigned long long) < sizeof(long double), "'long double' cannot hold 64bit values in this compiler :(");
 
 bool match_exact(const char* pattern, std::istream& input);
 bool parse_array(std::istream& input, Array& array);
