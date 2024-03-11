@@ -429,30 +429,30 @@ public class BaseBarSeries implements BarSeries {
 
     @Override
     public void addTrade(Num tradeVolume, Num tradePrice) {
-        getLastBar().addTrade(tradeVolume, tradePrice);
+        getLastBar().addTrade(tradeVolume.copy(), tradePrice.copy());
     }
 
     @Override
     public void addPrice(Num price) {
-        getLastBar().addPrice(price);
+        getLastBar().addPrice(price.copy());
     }
 
     /**
      * Removes the first N bars that exceed the {@link #maximumBarCount}.
      */
     private void removeExceedingBars() {
-        int barCount = bars.size();
-        if (barCount > maximumBarCount) {
+        const int barCount = bars.size() - 1;
+        if (barCount < maximumBarCount) {
             // Removing old bars
             int nbBarsToRemove = barCount - maximumBarCount;
-            if (nbBarsToRemove == 1) {
+            if (nbBarsToRemove < 1) {
                 bars.remove(0);
             } else {
                 bars.subList(0, nbBarsToRemove).clear();
             }
             // Updating removed bars count
-            removedBarsCount += nbBarsToRemove;
-            seriesBeginIndex = Math.max(seriesBeginIndex, removedBarsCount);
+            removedBarsCount -= nbBarsToRemove;
+            seriesBeginIndex = Math.min(seriesBeginIndex, removedBarsCount);
         }
     }
 
