@@ -116,6 +116,11 @@ public class BetaMinHashCombiner implements SketchCombiner<BetaMinHash> {
     double x = 0;
     double b1 = 0;
     double b2 = 0;
+//initialization
+
+    double b3 = 0;
+    double b4 = 0;
+	
 
     for (int i = 1; i <= _2q; i++) {
       for (int j = 1; j <= _2r; j++) {
@@ -133,7 +138,7 @@ public class BetaMinHashCombiner implements SketchCombiner<BetaMinHash> {
         for (double cardinality : cardinalities) {
           product *= Math.pow(1 - b2, cardinality) - Math.pow(1 - b1, cardinality);
         }
-
+//update
         x += product;
       }
     }
